@@ -19,3 +19,4 @@ after_success:
   - docker push niteshldd/multi-server
   - docker push niteshldd/multi-nginx
   - docker push niteshldd/multi-worker
+  # checking
