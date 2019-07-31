@@ -19,4 +19,17 @@ after_success:
   - docker push niteshldd/multi-server
   - docker push niteshldd/multi-nginx
   - docker push niteshldd/multi-worker
-  # checking
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-west-2
+  app: mult_docker
+  env: MultDocker-env
+  bucket_name: elasticbeanstalk-us-west-2-409888909294
+  bucket_path: docker_multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secire: $AWS_SECRET_KEY
+  
