@@ -9,7 +9,7 @@ script:
   - docker run niteshldd/react-test npm test
 
 after_success:
-  - docker build -t niteshldd/multi-client ./client
+  - docker build -t niteshldd/multi-client:v1 ./client
   - docker build -t niteshldd/multi-server ./server
   - docker build -t niteshldd/multi-nginx ./nginx
   - docker build -t niteshldd/multi-worker ./worker
